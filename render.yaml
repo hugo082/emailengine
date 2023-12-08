@@ -8,7 +8,7 @@ services:
       name: emailengine
       env: node
       repo: https://github.com/postalsys/emailengine.git
-      plan: standard
+      plan: free
       numInstances: 1
       #healthCheckPath: /health
       buildCommand: ./update-info.sh && npm install --omit=dev
@@ -37,4 +37,5 @@ services:
     - type: redis
       name: ee-redis
       ipAllowList: []
+      plan: free
       maxmemoryPolicy: noeviction # optional (defaults to allkeys-lru)

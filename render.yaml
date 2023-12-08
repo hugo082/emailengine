@@ -27,6 +27,8 @@ services:
             value: 1
           - key: EENGINE_MAX_SIZE
             value: 25M
+          - key: EENGINE_IMAP_PROXY_ENABLED
+            value: false
       autoDeploy: false # optional
 
     # The Redis instance

@@ -608,6 +608,7 @@ async function sendWebhook(account, event, data) {
 }
 
 let spawnWorker = async type => {
+    console.log('spawnWorker', type);
     if (isClosing) {
         return;
     }
@@ -633,7 +634,9 @@ let spawnWorker = async type => {
         await updateServerState(type, 'spawning');
     }
 
-    let worker = new Worker(pathlib.join(__dirname, 'workers', `${type.replace(/[A-Z]/g, c => `-${c.toLowerCase()}`)}.js`), {
+    const workerSource = pathlib.join(__dirname, 'workers', `${type.replace(/[A-Z]/g, c => `-${c.toLowerCase()}`)}.js`)
+    console.log('spawnWorker', type, workerSource);
+    let worker = new Worker(workerSource, {
         argv,
         env: SHARE_ENV,
         trackUnmanagedFds: true

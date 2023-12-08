@@ -165,7 +165,7 @@ config.dbs.redis = readEnvValue('EENGINE_REDIS') || readEnvValue('REDIS_URL') ||
 config.workers.imap = getWorkerCount(readEnvValue('EENGINE_WORKERS') || config.workers.imap) || 4;
 
 config.workers.webhooks = Number(readEnvValue('EENGINE_WORKERS_WEBHOOKS')) || config.workers.webhooks || 1;
-config.workers.submit = Number(readEnvValue('EENGINE_WORKERS_SUBMIT')) || config.workers.submit || 1;
+config.workers.submit = Number(readEnvValue('EENGINE_WORKERS_SUBMIT')) ?? config.workers.submit ?? 1;
 
 config.api.port =
     (hasEnvValue('EENGINE_PORT') && Number(readEnvValue('EENGINE_PORT'))) || (hasEnvValue('PORT') && Number(readEnvValue('PORT'))) || config.api.port;

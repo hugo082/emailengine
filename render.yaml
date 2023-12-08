@@ -1,13 +1,9 @@
-# EmailEngine blueprint for Render.com
-# Use the following repository address when setting up a new blueprint application:
-#   https://github.com/postalsys/emailengine
-
 services:
     # Web service
     - type: web
       name: emailengine
       env: node
-      repo: https://github.com/postalsys/emailengine.git
+      repo: https://github.com/hugo082/emailengine.git
       plan: free
       numInstances: 1
       #healthCheckPath: /health

@@ -608,7 +608,7 @@ async function sendWebhook(account, event, data) {
 }
 
 let spawnWorker = async type => {
-    console.log('spawnWorker', type);
+    console.trace('spawnWorker', type);
     if (isClosing) {
         return;
     }

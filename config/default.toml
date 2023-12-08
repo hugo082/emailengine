@@ -3,10 +3,11 @@
 imap = 1
 webhooks = 1
 "imapProxy" = 1
+submit = 0
 
 [queues]
 # concurrency values
-submit = 1
+submit = 0
 notify = 1
 
 [service]

@@ -18,7 +18,11 @@ services:
           - key: EENGINE_SECRET
             generateValue: true
           - key: EENGINE_WORKERS
-            value: 2
+            value: 1
+          - key: EENGINE_WORKERS_WEBHOOKS
+            value: 1
+          - key: EENGINE_WORKERS_SUBMIT
+            value: 0
           - key: EENGINE_TIMEOUT
             value: 30s
           - key: EENGINE_HOST

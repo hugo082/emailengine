@@ -2211,6 +2211,8 @@ const startApplication = async () => {
         await settings.set('cookiePassword', cookiePassword);
     }
 
+    console.log(config)
+
     // multiple IMAP connection handlers
     let workerPromises = [];
     for (let i = 0; i < config.workers.imap; i++) {
